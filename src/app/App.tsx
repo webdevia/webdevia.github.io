@@ -8,6 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
+          <h1>Игорь Аралов (igor.aralov@rambler.ru)</h1>
           <p>Научиться разрабатывать веб-приложения при помощи React</p>
           <p>
             Профессионально работаю SQL разработчиком уже 10 лет и принимаю участие в разработке десктопного приложения
