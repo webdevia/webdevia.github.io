@@ -8,11 +8,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <ul>
+          <ol>
             <li>Научиться разрабатывать веб-приложения при помощи React</li>
             <li>Профессионально работаю SQL разработчиком уже 10 лет и принимаю участие в разработке десктопного приложения на Delphi</li>
             <li>Интересуюсь фронтенд и фуллстек разработкой на js/ts</li>
-          </ul>
+          </ol>
         </p>
       </header>
     </div>
