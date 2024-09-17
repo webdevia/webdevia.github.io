@@ -4,6 +4,103 @@
  * Поэтому в идеале чтобы функции возвращали случайные данные, но в то же время не абракадабру.
  * В целом сделайте так, как вам будет удобно.
  * */
+import crypto from 'crypto';
+import { names, photos, nouns, adjectives } from './data';
+
+type Category = {
+  id: string;
+  name: string;
+  photo?: string;
+};
+
+type Product = {
+  id: string;
+  name: string;
+  photo: string;
+  desc?: string;
+  createdAt: string;
+  oldPrice?: number;
+  price: number;
+  category: Category;
+};
+
+type Operation = Cost | Profit;
+
+type Cost = {
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  amount: number;
+  category: Category;
+  type: 'Cost';
+};
+
+type Profit = {
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  amount: number;
+  category: Category;
+  type: 'Profit';
+};
+
+const getRandomItemFromArray = <T>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];
+const getRandomNumber = (min: number, max: number): number => Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandomDescription = (nouns: string[], adjectives: string[]): string => {
+  const fourAdjectives = [...Array(4)].map(() => getRandomItemFromArray(adjectives)).join(' ');
+  const noun = getRandomItemFromArray(nouns);
+  return `${fourAdjectives} ${noun}`;
+};
+const getRandomId = crypto.randomUUID;
+const createRandomCategory = (): Category => ({
+  id: getRandomId(),
+  name: getRandomItemFromArray(names),
+  photo: getRandomItemFromArray(photos),
+});
+
+const createRandomCost = (createdAt: string): Cost => ({
+  id: getRandomId(),
+  name: getRandomItemFromArray(names),
+  desc: getRandomDescription(nouns, adjectives),
+  createdAt,
+  amount: getRandomNumber(100, 1000),
+  category: createRandomCategory(),
+  type: 'Cost',
+});
+
+const createRandomProfit = (createdAt: string): Profit => ({
+  id: getRandomId(),
+  name: getRandomItemFromArray(names),
+  desc: getRandomDescription(nouns, adjectives),
+  createdAt,
+  amount: getRandomNumber(100, 1000),
+  category: createRandomCategory(),
+  type: 'Profit',
+});
+
+export const createRandomOperation = (createdAt: string): Operation => {
+  type OperationsMap = Record<number, (createdAt: string) => Operation>;
+  const operationsMap: OperationsMap = {
+    0: createRandomCost,
+    1: createRandomProfit,
+  };
+  const randomNumber = getRandomNumber(0, Object.keys(operationsMap).length - 1);
+
+  return operationsMap[randomNumber](createdAt);
+};
+
+export const createRandomProduct = (createdAt: string): Product => ({
+  id: getRandomId(),
+  name: getRandomItemFromArray(names),
+  photo: getRandomItemFromArray(photos),
+  desc: getRandomDescription(nouns, adjectives),
+  createdAt,
+  oldPrice: getRandomNumber(100, 1000),
+  price: getRandomNumber(100, 1000),
+  category: createRandomCategory(),
+});
 
 /**
  * Нужно создать тип Category, он будет использоваться ниже.
