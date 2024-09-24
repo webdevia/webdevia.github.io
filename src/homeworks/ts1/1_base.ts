@@ -7,7 +7,7 @@ export const addPlus = (string: string): string => `+${string}`;
 
 export const removeFirstZeros = (value: string): string => value.replace(/^(-)?[0]+(-?\d+.*)$/, '$1$2');
 
-export const getBeautifulNumber = (value?: number | null, separator: string = ' ') =>
+export const getBeautifulNumber = (value: number, separator = ' '): string =>
   value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 
 export const round = (value: number, accuracy: number = 2): number => {
@@ -63,14 +63,14 @@ export const hex2rgb = (color: string): Colors => {
   return [red, green, blue];
 };
 
-type NumberedArrayItem = {
-  value: unknown;
+type NumberedArrayItem<T> = {
+  value: T;
   number: number;
 };
 
-export const getNumberedArray = (arr: unknown[]): NumberedArrayItem[] =>
+export const getNumberedArray = <T>(arr: T[]): NumberedArrayItem<T>[] =>
   arr.map((value, number) => ({ value, number }));
-export const toStringArray = (arr: NumberedArrayItem[]) => arr.map(({ value, number }) => `${value}_${number}`);
+export const toStringArray = <T>(arr: NumberedArrayItem<T>[]) => arr.map(({ value, number }) => `${value}_${number}`);
 
 type Customer = {
   id: number;
