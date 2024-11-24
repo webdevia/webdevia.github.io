@@ -1,0 +1,11 @@
+.description {
+  font-size: 1em;
+  color: #555;
+  margin-top: 10px;
+}
+
+.short {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
