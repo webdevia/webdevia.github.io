@@ -3,8 +3,8 @@ import cn from 'clsx';
 import s from './ModalForm.module.scss';
 
 type ModalFormProps = {
-  visible?: boolean;
-  children?: ReactNode;
+  visible: boolean;
+  children: ReactNode;
 };
 
 export const ModalForm = ({ visible = true, children }: ModalFormProps) => {

@@ -1,12 +1,17 @@
 import React from 'react';
-import { ProductDetail as ProductDetailProps } from './product.types';
-import { ProductContainer } from './ProductContainer';
-import { Product } from './Product';
-import { Description } from '../description/Description';
-import { AddToCart } from './AddToCart';
-import { Image } from '../image/Image';
-import { MT15 } from '../mt15/MT15';
+import { Description } from '../../description/Description';
+import { AddToCart } from '../add-to-cart/AddToCart';
+import { Image } from '../../image/Image';
+import { MT15 } from '../../mt15/MT15';
+import { ProductContainer } from '../product-container/ProductContainer';
+import { Product, ProductProps } from '../product/Product';
 import s from './ProductDetail.module.scss';
+
+type ProductDetailProps = ProductProps & {
+  images: string[];
+  category: string;
+  description: string;
+};
 
 export const ProductDetail = (data: ProductDetailProps) => (
   <ProductContainer>

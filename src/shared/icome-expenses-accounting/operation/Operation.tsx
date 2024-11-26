@@ -1,6 +1,11 @@
 import React from 'react';
-import { Operation as OperationProps } from './operation.types';
 import s from './Operation.module.scss';
+
+export type OperationProps = {
+  amount: number;
+  category: string;
+  title: string;
+};
 
 export const Operation = (data: OperationProps) => (
   <>

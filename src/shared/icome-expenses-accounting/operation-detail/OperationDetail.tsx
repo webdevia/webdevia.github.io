@@ -1,10 +1,9 @@
 import React from 'react';
-import { OperationDetail as OperationDetailProps } from './operation.types';
-import { OperationContainer } from './OperationContainer';
-import { Operation } from './Operation';
-import { Description } from '../description/Description';
-import { Button } from '../button/Button';
-import { MT15 } from '../mt15/MT15';
+import { Description } from '../../description/Description';
+import { Button } from '../../button/Button';
+import { MT15 } from '../../mt15/MT15';
+import { OperationContainer } from '../operation-container/OperationContainer';
+import { Operation, OperationProps } from '../operation/Operation';
 import s from './OperationDetail.module.scss';
 
 const EditButton = () => (
@@ -12,6 +11,8 @@ const EditButton = () => (
     <Button disabled={true}>Редактировать</Button>
   </MT15>
 );
+
+type OperationDetailProps = OperationProps & { description: string; date: string };
 
 export const OperationDetail = (data: OperationDetailProps) => (
   <OperationContainer>
