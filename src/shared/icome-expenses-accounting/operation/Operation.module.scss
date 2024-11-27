@@ -1,0 +1,21 @@
+.amount {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4caf50;
+
+  &::before {
+    content: '₽';
+  }
+}
+
+.category {
+  font-size: 1.2em;
+  color: #888;
+  margin-top: 5px;
+}
+
+.title {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-top: 10px;
+}
