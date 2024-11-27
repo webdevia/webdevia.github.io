@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
 
-import { AddToCart } from '../shared/i-shop/AddToCart';
+import { AddToCart } from '../shared/i-shop/add-to-cart/AddToCart';
 
 const meta: Meta<typeof AddToCart> = {
   component: AddToCart,

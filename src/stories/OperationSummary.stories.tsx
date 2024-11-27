@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
 
-import { OperationSummary } from '../shared/icome-expenses-accounting/OperationSummary';
+import { OperationSummary } from '../shared/icome-expenses-accounting/operation-summary/OperationSummary';
 
 const meta: Meta<typeof OperationSummary> = {
   component: OperationSummary,

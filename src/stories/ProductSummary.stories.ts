@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
 
-import { ProductSummary } from '../shared/i-shop/ProductSummary';
+import { ProductSummary } from '../shared/i-shop/product-summary/ProductSummary';
 
 const meta: Meta<typeof ProductSummary> = {
   component: ProductSummary,

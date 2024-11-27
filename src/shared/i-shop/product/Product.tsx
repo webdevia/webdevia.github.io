@@ -1,6 +1,10 @@
 import React from 'react';
-import { Product as ProductProps } from './product.types';
 import s from './Product.module.scss';
+
+export type ProductProps = {
+  title: string;
+  price: number;
+};
 
 export const Product = (data: ProductProps) => (
   <>

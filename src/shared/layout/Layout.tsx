@@ -309,7 +309,7 @@ const Content = () => (
 
 export const Layout = () => (
   <>
-    <Header />
+    <Header showLogo={true} />
     <Content />
   </>
 );

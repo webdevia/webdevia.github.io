@@ -1,10 +1,13 @@
 import React from 'react';
-import { ProductCart as ProductCartProps } from './product.types';
-import { Product } from './Product';
-import { Button } from '../button/Button';
+import { Button } from '../../button/Button';
+import { Product, ProductProps } from '../product/Product';
 import s from './ProductCart.module.scss';
 
 const DeleteButton = () => <Button disabled={true}>Удалить</Button>;
+
+type ProductCartProps = {
+  product: ProductProps;
+};
 
 export const ProductCart = ({ product }: ProductCartProps) => (
   <div className={s['product-cart']}>
