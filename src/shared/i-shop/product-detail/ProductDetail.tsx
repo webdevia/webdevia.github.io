@@ -18,7 +18,7 @@ export const ProductDetail = (data: ProductDetailProps) => (
     <div className={s['product-category']}>{data.category}</div>
     <div className={s['product-images']}>
       {data.images.map((image, index) => (
-        <Image url={image} title={`${data.title} ${index ? index : ''}`.trim()} />
+        <Image key={index} url={image} title={`${data.title} ${index ? index : ''}`.trim()} />
       ))}
     </div>
     <Product {...data} />

@@ -10,12 +10,12 @@ export const removeFirstZeros = (value: string): string => value.replace(/^(-)?[
 export const getBeautifulNumber = (value: number, separator = ' '): string =>
   value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 
-export const round = (value: number, accuracy: number = 2): number => {
+export const round = (value: number, accuracy = 2): number => {
   const d = 10 ** accuracy;
   return Math.round(value * d) / d;
 };
 
-const transformRegexp: RegExp =
+const transformRegexp =
   /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
 type TransformedRegexp = {
@@ -42,8 +42,8 @@ type BlackOrWhite = 'black' | 'white';
 
 export const getContrastType = (contrastValue: number): BlackOrWhite => (contrastValue > 125 ? 'black' : 'white');
 
-export const shortColorRegExp: RegExp = /^#[0-9a-f]{3}$/i;
-export const longColorRegExp: RegExp = /^#[0-9a-f]{6}$/i;
+export const shortColorRegExp = /^#[0-9a-f]{3}$/i;
+export const longColorRegExp = /^#[0-9a-f]{6}$/i;
 
 export const checkColor = (color: string): void | never => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
