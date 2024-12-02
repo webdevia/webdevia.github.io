@@ -1,0 +1,17 @@
+[data-theme='light'] {
+  --background-color: #fff;
+  --color: #000;
+  --logo-bg-color: #333 ;
+  --logo-text-color: #f4f4f4;
+  --header-bg-color: #dbdbdb;
+  --layout-bg-color: #fafafa;
+}
+
+[data-theme='dark'] {
+  --background-color: #333;
+  --color: #fff;
+  --logo-bg-color: #f4f4f4;
+  --logo-text-color: #333;
+  --header-bg-color: #333;
+  --layout-bg-color: #4e4e4e;
+}
