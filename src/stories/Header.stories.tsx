@@ -3,16 +3,19 @@ import type { Meta } from '@storybook/react';
 
 import { Header, HeaderProps } from '../shared/header/Header';
 import { ThemeProvider } from '../shared/providers/ThemeProvider';
+import { LangProvider } from '../shared/providers/LangProvider';
 import './theme.css';
 
-const ThemedHeader = (data: HeaderProps) => (
+const HeaderWithThemeAndLangProviders = (data: HeaderProps) => (
   <ThemeProvider>
-    <Header {...data} />
+    <LangProvider>
+      <Header {...data} />
+    </LangProvider>
   </ThemeProvider>
 );
 
-const meta: Meta<typeof ThemedHeader> = {
-  component: ThemedHeader,
+const meta: Meta<typeof HeaderWithThemeAndLangProviders> = {
+  component: HeaderWithThemeAndLangProviders,
   title: 'Общее задание/Header',
   tags: ['autodocs'],
 };
