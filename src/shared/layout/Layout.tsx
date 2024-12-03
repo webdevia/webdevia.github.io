@@ -1,315 +1,36 @@
 import React from 'react';
 import { Header } from '../header/Header';
+import { Content, useLang } from '../../shared/providers/LangProvider';
 import s from './Layout.module.scss';
 
-const Content = () => (
-  <p className={s.content}>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <p>Odit necessitatibus iure quas quaerat!</p>
-    <p>Quae vitae deserunt vero accusantium?</p>
-    <p>Id laborum quaerat rem laboriosam.</p>
-    <p>Molestias saepe assumenda optio ab!</p>
-    <p>Facilis nostrum natus consectetur quam.</p>
-    <p>Doloremque illum ducimus ut assumenda.</p>
-    <p>Numquam doloribus autem nemo sint.</p>
-    <p>Repellendus ex odio aperiam pariatur.</p>
-    <p>Assumenda natus ratione labore tempora.</p>
-    <p>Delectus, cumque. Enim, aut iste.</p>
-    <p>Ipsa fugit ad temporibus reprehenderit.</p>
-    <p>Quos beatae assumenda fuga repellat.</p>
-    <p>Odit odio velit ducimus repellat?</p>
-    <p>Placeat possimus vero alias perferendis.</p>
-    <p>Facilis, inventore. Ratione, delectus illum?</p>
-    <p>Necessitatibus nisi harum assumenda eligendi!</p>
-    <p>Nisi laboriosam et voluptates. Repudiandae.</p>
-    <p>Commodi illo dolore ipsa eos.</p>
-    <p>Optio incidunt veniam officiis reiciendis.</p>
-    <p>Illo odio sapiente eum aliquam.</p>
-    <p>Et aspernatur enim provident sit.</p>
-    <p>Totam maiores dicta magnam deserunt.</p>
-    <p>Doloremque amet magni tempore expedita.</p>
-    <p>Dolores asperiores expedita aut magnam!</p>
-    <p>Consectetur tempora atque perferendis odio.</p>
-    <p>Cum eius officiis repudiandae fuga.</p>
-    <p>Officiis repellat ducimus architecto culpa.</p>
-    <p>Ducimus odio vero corrupti error!</p>
-    <p>Dolore perspiciatis consequuntur culpa commodi!</p>
-    <p>Explicabo sapiente laudantium quae atque.</p>
-    <p>Hic reiciendis dignissimos vitae veritatis!</p>
-    <p>Provident veniam ut ad consectetur.</p>
-    <p>Maxime nobis voluptates deleniti consectetur!</p>
-    <p>Neque soluta itaque voluptatum alias!</p>
-    <p>Ad, ipsa quo. Nulla, laborum.</p>
-    <p>Inventore voluptatem quas eveniet rerum!</p>
-    <p>Omnis modi possimus animi voluptatum!</p>
-    <p>Voluptatem natus alias fugiat accusamus.</p>
-    <p>Itaque eos maiores corporis unde!</p>
-    <p>Cum repudiandae ad autem et!</p>
-    <p>Cum provident placeat veniam suscipit.</p>
-    <p>Animi, possimus. Distinctio, quos necessitatibus?</p>
-    <p>Consequatur dolore impedit dicta officiis!</p>
-    <p>Maxime eligendi voluptatum aspernatur repudiandae!</p>
-    <p>Maiores accusantium officia veniam odit!</p>
-    <p>Dicta, eius. Dolore, maxime optio?</p>
-    <p>Accusamus ad nihil numquam quae.</p>
-    <p>Atque, quidem! Perspiciatis, non unde.</p>
-    <p>Laboriosam eum consequuntur saepe iusto.</p>
-    <p>Facere aliquam sit ad omnis.</p>
-    <p>Consectetur voluptate doloribus nemo et!</p>
-    <p>Accusamus debitis quaerat beatae quas.</p>
-    <p>Ipsa consectetur tenetur dolorem omnis.</p>
-    <p>Blanditiis ad asperiores culpa at.</p>
-    <p>Cupiditate itaque iure doloribus hic.</p>
-    <p>Numquam hic incidunt voluptate fugiat?</p>
-    <p>Illo distinctio explicabo porro maiores.</p>
-    <p>Numquam ea totam officiis voluptatibus.</p>
-    <p>Ex recusandae est perspiciatis quos!</p>
-    <p>Dolores iste recusandae modi facilis?</p>
-    <p>Asperiores id vitae odio officiis.</p>
-    <p>Blanditiis numquam enim accusantium quia.</p>
-    <p>Delectus quas tenetur iure voluptatibus?</p>
-    <p>Illo aliquam inventore exercitationem quia.</p>
-    <p>Reprehenderit, voluptates modi! Molestias, quae!</p>
-    <p>Iure dicta repellat facilis in!</p>
-    <p>Eos fugit tempora dolor molestias.</p>
-    <p>Earum neque consectetur magnam exercitationem!</p>
-    <p>Facere repudiandae vel assumenda odit!</p>
-    <p>Dolore expedita officiis sed voluptatem.</p>
-    <p>Ratione minima odit blanditiis voluptatum!</p>
-    <p>Quibusdam laborum reiciendis placeat iste!</p>
-    <p>Architecto obcaecati eaque nihil non!</p>
-    <p>Dolore nihil placeat alias qui!</p>
-    <p>Beatae veritatis assumenda illo ipsum?</p>
-    <p>Blanditiis animi facilis adipisci suscipit.</p>
-    <p>Voluptatibus, architecto aut. Aliquam, molestias!</p>
-    <p>Reprehenderit illo reiciendis minima. Tempore.</p>
-    <p>Commodi dicta totam tenetur dolore?</p>
-    <p>Repellat, ratione corporis! Placeat, soluta.</p>
-    <p>Totam similique pariatur magnam modi.</p>
-    <p>Expedita exercitationem ipsum debitis velit.</p>
-    <p>Magni perferendis aut deserunt alias.</p>
-    <p>Consectetur sint aspernatur dolor quidem.</p>
-    <p>Incidunt porro voluptates assumenda odio!</p>
-    <p>Quae nemo laborum nihil nulla.</p>
-    <p>Error voluptas itaque dicta suscipit.</p>
-    <p>Rem magnam amet dignissimos consequuntur.</p>
-    <p>Tempore corrupti nesciunt reiciendis ratione!</p>
-    <p>Eum quasi fugit tempore adipisci.</p>
-    <p>Vel fugiat unde ipsa repellat.</p>
-    <p>Suscipit, vero? Voluptatum, suscipit id!</p>
-    <p>Eligendi itaque magnam et? Voluptatibus?</p>
-    <p>Aperiam laborum tempore explicabo reiciendis.</p>
-    <p>Cupiditate esse excepturi ab eos.</p>
-    <p>Vero animi soluta omnis praesentium!</p>
-    <p>Incidunt at laborum veritatis quis.</p>
-    <p>Facilis dolorum sunt dolores doloribus.</p>
-    <p>Ab officiis eaque iste doloribus.</p>
-    <p>Assumenda necessitatibus tempore fugiat rerum.</p>
-    <p>Nam quasi nihil minus ipsum.</p>
-    <p>Voluptatem temporibus possimus assumenda cum?</p>
-    <p>Tenetur et eos possimus fugit?</p>
-    <p>Consequatur dolorum at odit a.</p>
-    <p>Consequatur exercitationem ipsum nisi expedita.</p>
-    <p>Modi, neque? Nesciunt, nobis laborum.</p>
-    <p>Optio est tempore amet ratione?</p>
-    <p>Dolor repudiandae laboriosam ullam nobis!</p>
-    <p>Iste assumenda nostrum est suscipit?</p>
-    <p>Porro veniam quidem iste in.</p>
-    <p>Praesentium quo molestias dolorum odio.</p>
-    <p>Minus veniam culpa repellendus esse.</p>
-    <p>Provident tempore commodi nemo corporis?</p>
-    <p>Laudantium quibusdam sunt aliquam ab?</p>
-    <p>Architecto consequuntur voluptas distinctio delectus?</p>
-    <p>Dignissimos excepturi deleniti reprehenderit tempora.</p>
-    <p>Iure atque deserunt consequatur laborum?</p>
-    <p>Ullam, modi vero. Error, doloremque!</p>
-    <p>Veritatis fugiat odit libero exercitationem!</p>
-    <p>Sapiente placeat perferendis laudantium error!</p>
-    <p>Accusamus vero magnam illo molestiae?</p>
-    <p>Doloremque minus exercitationem error neque?</p>
-    <p>Quam corrupti culpa repellat adipisci?</p>
-    <p>Id harum fugit tempora quas?</p>
-    <p>Quo eveniet aperiam dignissimos cupiditate.</p>
-    <p>Aut quasi quidem in laborum?</p>
-    <p>Laudantium necessitatibus totam itaque impedit.</p>
-    <p>Deserunt quo porro quasi ut.</p>
-    <p>Repellendus doloremque nam enim laudantium.</p>
-    <p>Modi quae nesciunt ipsam animi!</p>
-    <p>Minima aut repellat ab reiciendis?</p>
-    <p>Doloremque eaque sequi doloribus laboriosam.</p>
-    <p>Ratione repudiandae natus aliquid sunt?</p>
-    <p>Velit ratione vel dolore maxime.</p>
-    <p>Temporibus, dolore. Aspernatur, voluptate nisi?</p>
-    <p>Eius quos sed delectus sit.</p>
-    <p>Ut cupiditate sequi esse ipsum.</p>
-    <p>Veniam voluptas exercitationem quibusdam animi.</p>
-    <p>Cum temporibus nobis fugiat repellat?</p>
-    <p>Vitae, atque sapiente! Omnis, fugit.</p>
-    <p>Perspiciatis consequatur optio aut sunt.</p>
-    <p>Nesciunt itaque eaque tenetur aliquam!</p>
-    <p>Fugit accusamus veniam culpa adipisci!</p>
-    <p>Blanditiis numquam ipsam culpa optio.</p>
-    <p>Molestiae eum fugiat architecto rerum!</p>
-    <p>Saepe fugit dolor totam corporis!</p>
-    <p>Quaerat aliquam vero officiis a.</p>
-    <p>Ab magni modi quas sit.</p>
-    <p>Reiciendis suscipit unde ducimus quasi.</p>
-    <p>Molestias laudantium facilis dicta consectetur.</p>
-    <p>Distinctio adipisci autem accusamus quibusdam!</p>
-    <p>Possimus hic eaque illum a?</p>
-    <p>Culpa labore reprehenderit voluptate tempore?</p>
-    <p>Quod, doloremque. Natus, ipsa quo.</p>
-    <p>Illum molestias ducimus sequi magnam.</p>
-    <p>Explicabo nostrum amet quia hic.</p>
-    <p>Vero aperiam tempora quos reiciendis.</p>
-    <p>Placeat fuga ea quos qui.</p>
-    <p>Laboriosam, dolores? Nesciunt, facere neque?</p>
-    <p>Praesentium voluptas animi dolor repudiandae!</p>
-    <p>Velit ullam suscipit consequuntur adipisci.</p>
-    <p>Eius commodi quisquam doloribus cupiditate!</p>
-    <p>Illo debitis perferendis quis iusto!</p>
-    <p>Aut laudantium mollitia nobis assumenda.</p>
-    <p>Nisi, quasi! Temporibus, ducimus quam.</p>
-    <p>In pariatur tenetur ducimus rem?</p>
-    <p>Unde dolore eos accusamus molestiae.</p>
-    <p>Error voluptatum ipsam sunt ex.</p>
-    <p>Voluptates temporibus vitae magni earum!</p>
-    <p>Alias ipsam tenetur placeat quae.</p>
-    <p>Explicabo consectetur vero quidem saepe.</p>
-    <p>Facilis consectetur nulla culpa veritatis?</p>
-    <p>Laudantium dolorem animi vel tempore!</p>
-    <p>Iste eius ex mollitia quis?</p>
-    <p>Eum error eligendi aspernatur optio!</p>
-    <p>Delectus suscipit maxime minus quo.</p>
-    <p>Ad cupiditate ducimus aspernatur aperiam.</p>
-    <p>Obcaecati accusamus eius natus cupiditate!</p>
-    <p>Voluptatem maxime voluptatum odio blanditiis?</p>
-    <p>Illum sapiente amet officia ipsa.</p>
-    <p>Sit exercitationem minima quaerat nobis!</p>
-    <p>Nulla nesciunt quia ea temporibus!</p>
-    <p>Omnis totam magnam laboriosam? Doloribus!</p>
-    <p>Voluptatem excepturi dolores culpa distinctio.</p>
-    <p>Accusamus alias architecto obcaecati repudiandae.</p>
-    <p>Dolores mollitia corporis laborum hic?</p>
-    <p>Laboriosam, beatae assumenda? Officia, vel!</p>
-    <p>Provident excepturi minus fugiat iusto?</p>
-    <p>Similique voluptas doloremque consequuntur optio?</p>
-    <p>Ea voluptates dolor numquam quasi.</p>
-    <p>Cupiditate distinctio nesciunt temporibus molestiae?</p>
-    <p>Laborum harum autem expedita excepturi?</p>
-    <p>Tenetur consequatur distinctio alias itaque.</p>
-    <p>Nam officiis minima modi totam.</p>
-    <p>Velit deleniti accusantium illum natus?</p>
-    <p>Exercitationem, alias? Voluptate, quis nulla!</p>
-    <p>Asperiores odit quasi itaque sed!</p>
-    <p>Incidunt nulla quae odit sequi.</p>
-    <p>Incidunt fugit omnis neque fugiat?</p>
-    <p>Ipsum esse veniam atque nam?</p>
-    <p>Minus sequi consectetur inventore repellat!</p>
-    <p>Alias corporis harum ad optio.</p>
-    <p>Aliquam sed mollitia magnam pariatur?</p>
-    <p>Ipsum sed odio sunt officiis.</p>
-    <p>Pariatur numquam facilis dolorum excepturi.</p>
-    <p>Nemo quae culpa incidunt laboriosam.</p>
-    <p>Fuga provident molestias a esse?</p>
-    <p>Pariatur, sequi quod. Debitis, quos.</p>
-    <p>Earum voluptates dolorum dolor rem!</p>
-    <p>Eveniet dolor quis aperiam accusamus?</p>
-    <p>Doloremque expedita id vero quisquam!</p>
-    <p>Consequatur facere aperiam iusto odit?</p>
-    <p>Nemo harum saepe ex totam!</p>
-    <p>Perferendis nisi sunt id voluptatum!</p>
-    <p>Quam omnis esse molestias doloremque.</p>
-    <p>Eligendi adipisci odio hic quia?</p>
-    <p>Quaerat libero accusamus debitis consequuntur.</p>
-    <p>Voluptatem commodi veritatis quos necessitatibus.</p>
-    <p>Excepturi sequi similique vel nihil!</p>
-    <p>Voluptatem vel nostrum aliquam nihil.</p>
-    <p>Quos voluptatum quidem sequi nulla?</p>
-    <p>Ipsum soluta autem sapiente odio.</p>
-    <p>Non aut accusantium autem impedit.</p>
-    <p>Hic repellendus eligendi harum deleniti.</p>
-    <p>Vero provident voluptatibus quae. Cumque.</p>
-    <p>Voluptatibus doloremque beatae in necessitatibus.</p>
-    <p>Aut ducimus tempora magnam consequatur.</p>
-    <p>Repudiandae omnis corporis obcaecati nobis?</p>
-    <p>Quis similique cupiditate corrupti dignissimos.</p>
-    <p>Aliquid aperiam non laborum repudiandae.</p>
-    <p>Delectus ratione error officiis blanditiis!</p>
-    <p>Reiciendis labore dolores dignissimos voluptatem.</p>
-    <p>Optio, dolores ad. Explicabo, impedit?</p>
-    <p>Quas explicabo autem maiores perferendis!</p>
-    <p>Expedita sint optio minus debitis!</p>
-    <p>Veritatis voluptates vitae autem deleniti?</p>
-    <p>Nemo, laborum iste. Nam, et?</p>
-    <p>Culpa excepturi porro laborum at!</p>
-    <p>A suscipit numquam eius ab?</p>
-    <p>Sapiente distinctio est sed aliquam!</p>
-    <p>Ea amet consectetur eveniet doloremque?</p>
-    <p>Alias consequuntur obcaecati ea praesentium.</p>
-    <p>Tenetur nostrum fugiat eum ullam?</p>
-    <p>Eum enim itaque animi at?</p>
-    <p>Incidunt reiciendis ratione inventore neque.</p>
-    <p>Veritatis repellendus mollitia nisi reiciendis!</p>
-    <p>Ipsum numquam earum ea ipsam.</p>
-    <p>Consequuntur officia at deleniti eos!</p>
-    <p>Amet facere aliquid inventore exercitationem.</p>
-    <p>Neque reprehenderit dolores voluptatum aperiam.</p>
-    <p>Officia velit vel modi earum.</p>
-    <p>Adipisci, quibusdam. Magnam, asperiores voluptate?</p>
-    <p>Nulla placeat cupiditate odit delectus.</p>
-    <p>Illo velit iste sapiente mollitia!</p>
-    <p>Totam incidunt facilis ipsum accusantium.</p>
-    <p>Blanditiis, ducimus! A, quidem repudiandae?</p>
-    <p>Enim incidunt soluta alias vel!</p>
-    <p>Esse accusamus eveniet nihil quis.</p>
-    <p>Eaque dolore repellendus nulla sit.</p>
-    <p>Eveniet corporis et iusto neque.</p>
-    <p>Dignissimos, sequi. In, soluta explicabo.</p>
-    <p>Dolorum tenetur error enim aperiam?</p>
-    <p>Enim porro harum itaque laboriosam!</p>
-    <p>Deleniti necessitatibus temporibus mollitia dolorum.</p>
-    <p>Natus, eos! Nobis, consequuntur enim!</p>
-    <p>Laborum ullam architecto fuga quia.</p>
-    <p>Inventore, molestiae. Repellendus, quaerat modi?</p>
-    <p>Quis hic molestiae cupiditate suscipit.</p>
-    <p>Dolorum modi soluta et amet.</p>
-    <p>Quo labore quis modi dolores?</p>
-    <p>Quos optio expedita harum nihil!</p>
-    <p>Nesciunt laborum quia id dolore?</p>
-    <p>Tempore ipsam eaque facere expedita!</p>
-    <p>Sequi assumenda quod tempore natus?</p>
-    <p>Cumque maiores reprehenderit inventore optio.</p>
-    <p>Itaque repudiandae repellat expedita ipsum!</p>
-    <p>Repudiandae dicta nihil optio magnam.</p>
-    <p>Aliquid beatae dolores harum nobis?</p>
-    <p>Molestias libero id asperiores fuga.</p>
-    <p>Atque sed at sunt voluptate!</p>
-    <p>Quisquam nisi sint voluptate quis.</p>
-    <p>Sunt asperiores quis fugit corporis.</p>
-    <p>Inventore odio consequatur ratione quibusdam.</p>
-    <p>Vel nobis tenetur facere architecto?</p>
-    <p>Maxime tempore laudantium ducimus odit.</p>
-    <p>Sit corporis veritatis omnis itaque.</p>
-    <p>Quod, nemo sequi. At, distinctio!</p>
-    <p>Aut cupiditate perspiciatis qui natus.</p>
-    <p>Incidunt veniam nam quae expedita!</p>
-    <p>Amet fugit veniam eveniet fugiat.</p>
-    <p>Ipsam obcaecati ea iure hic?</p>
-    <p>Asperiores dicta pariatur eum vitae?</p>
-    <p>Corrupti tempore obcaecati beatae explicabo.</p>
-    <p>Et eius cumque quidem minus!</p>
-    <p>Ipsam id adipisci voluptas soluta?</p>
-    <p>Asperiores earum voluptas ducimus dignissimos!</p>
-    <p>Aspernatur esse autem mollitia ut?</p>
-    <p>Expedita ex atque soluta at?</p>
-    <p>Laboriosam laborum quasi ipsum est.</p>
-  </p>
-);
+const content: Content = {
+  text: {
+    en: `As the sun began to set over the tranquil village of Willowbrook, a sense of anticipation filled the air. The annual harvest festival was about to commence, and the villagers were bustling with excitement. Children ran through the fields, their laughter echoing like a melody of pure joy. Stalls were being set up along the main square, offering an array of handmade crafts, freshly baked goods, and the season’s finest produce.
+At the heart of the village stood an ancient oak tree, its branches sprawling wide like a guardian of time. Beneath this tree, the elders gathered, sharing stories of yore and wisdom passed down through generations. Amelia, a young girl with sparkling eyes and boundless curiosity, sat among them, soaking in every word. She loved listening to tales of bravery, love, and adventure, dreaming that one day, she too would have stories to tell.
+As the evening unfolded, the sky painted itself in hues of orange, pink, and purple, casting a magical glow over Willowbrook. The village musicians took their place, their instruments gleaming in the fading light. The first notes of a lively tune filled the air, and soon, everyone was dancing. Amelia twirled and spun, her laughter blending with the music, her heart filled with the simple happiness that only such moments can bring.
+As the night grew darker, lanterns were lit, casting a warm, golden light over the festivities. The aroma of roasted chestnuts and spiced cider wafted through the air, inviting everyone to partake in the feast. Friends and families gathered around long wooden tables, sharing food and stories, creating memories that would last a lifetime.
+Amidst the joy and celebration, Amelia’s thoughts wandered to the future. She knew that as long as the spirit of the harvest festival lived on, the bond within the community would remain strong, and Willowbrook would continue to be a place of love, laughter, and unity. With a heart full of hope and dreams, she smiled, knowing that she was part of something truly special.`,
+    ru: `Когда солнце начало садиться над тихой деревушкой Виллоубрук, в воздухе витало чувство ожидания. Ежегодный праздник урожая вот-вот начнется, и жители деревни бурлили от волнения. Дети бегали по полям, их смех звучал как мелодия чистой радости. На главной площади устанавливались ларьки, предлагающие ассортимент самодельных поделок, свежевыпеченных товаров и лучших продуктов сезона.
+В центре деревни стоял древний дуб, его ветви раскидывались широко, как хранитель времени. Под этим деревом собирались старейшины, рассказывая истории былых времен и мудрость, переданную через поколения. Амелия, молодая девушка с блестящими глазами и безграничным любопытством, сидела среди них, впитывая каждое слово. Она любила слушать истории о храбрости, любви и приключениях, мечтая о том, что однажды у нее тоже будут свои истории.
+По мере того как вечер разворачивался, небо окрашивалось в оттенки оранжевого, розового и пурпурного, придавая Виллоубруку магическое сияние. Деревенские музыканты заняли свои места, их инструменты сияли в ускользающем свете. Первые ноты оживленной мелодии заполнили воздух, и вскоре все танцевали. Амелия кружилась и вертелась, ее смех сливался с музыкой, сердце наполнялось простой радостью, которую могут принести только такие моменты.
+Когда ночь стала темнее, зажглись фонари, отбрасывая теплый, золотой свет на праздник. Аромат жареных каштанов и пряного сидра витал в воздухе, приглашая всех принять участие в пиршестве. Друзья и семьи собрались вокруг длинных деревянных столов, делясь едой и историями, создавая воспоминания, которые останутся на всю жизнь.
+Среди радости и праздника мысли Амелии унеслись в будущее. Она знала, что пока живет дух праздника урожая, связь внутри сообщества останется сильной, и Виллоубрук продолжит быть местом любви, смеха и единства. С сердцем, полным надежд и мечтаний, она улыбалась, зная, что является частью чего-то по-настоящему особенного.`,
+  },
+};
+
+const TestContent = () => {
+  const { useContent } = useLang();
+  const l = useContent(content);
+
+  return <div className={s.content}>{l('text')}</div>;
+};
 
 export const Layout = () => (
   <>
     <Header showLogo={true} />
-    <Content />
+    <TestContent />
+    <TestContent />
+    <TestContent />
+    <TestContent />
   </>
 );
