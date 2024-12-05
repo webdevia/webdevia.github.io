@@ -4,7 +4,7 @@ import { OperationSummary } from '../shared/icome-expenses-accounting/operation-
 
 const meta: Meta<typeof OperationSummary> = {
   component: OperationSummary,
-  title: 'Учет доходов-расходов/Краткая операция',
+  title: 'Учет доходов-расходов/Операция/Краткая',
   tags: ['autodocs'],
 };
 

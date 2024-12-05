@@ -4,8 +4,7 @@
  * Поэтому в идеале чтобы функции возвращали случайные данные, но в то же время не абракадабру.
  * В целом сделайте так, как вам будет удобно.
  * */
-import crypto from 'crypto';
-import { names, photos, nouns, adjectives } from './data';
+import { names, photos, nouns, adjectives, bankCategories, bankOperations } from './data';
 
 type Category = {
   id: string;
@@ -24,7 +23,7 @@ type Product = {
   category: Category;
 };
 
-type Operation = Cost | Profit;
+export type Operation = Cost | Profit;
 
 type Cost = {
   id: string;
@@ -49,30 +48,30 @@ type Profit = {
 const getRandomItemFromArray = <T>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];
 const getRandomNumber = (min: number, max: number): number => Math.floor(Math.random() * (max - min + 1)) + min;
 const getRandomDescription = (nouns: string[], adjectives: string[]): string => {
-  const fourAdjectives = [...Array(4)].map(() => getRandomItemFromArray(adjectives)).join(' ');
+  const someAdjectives = [...Array(50)].map(() => getRandomItemFromArray(adjectives)).join(' ');
   const noun = getRandomItemFromArray(nouns);
-  return `${fourAdjectives} ${noun}`;
+  return `${someAdjectives} ${noun}`;
 };
-const getRandomId = crypto.randomUUID;
+const getRandomId = () => `${getRandomNumber(1000, 9999)}-${getRandomNumber(1000, 9999)}`;
 const createRandomCategory = (): Category => ({
   id: getRandomId(),
-  name: getRandomItemFromArray(names),
+  name: getRandomItemFromArray(bankCategories),
   photo: getRandomItemFromArray(photos),
 });
 
 const createRandomCost = (createdAt: string): Cost => ({
   id: getRandomId(),
-  name: getRandomItemFromArray(names),
+  name: getRandomItemFromArray(bankOperations),
   desc: getRandomDescription(nouns, adjectives),
   createdAt,
-  amount: getRandomNumber(100, 1000),
+  amount: getRandomNumber(-100, -1000),
   category: createRandomCategory(),
   type: 'Cost',
 });
 
 const createRandomProfit = (createdAt: string): Profit => ({
   id: getRandomId(),
-  name: getRandomItemFromArray(names),
+  name: getRandomItemFromArray(bankOperations),
   desc: getRandomDescription(nouns, adjectives),
   createdAt,
   amount: getRandomNumber(100, 1000),

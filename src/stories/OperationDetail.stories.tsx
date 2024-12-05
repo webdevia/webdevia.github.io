@@ -4,7 +4,7 @@ import { OperationDetail } from '../shared/icome-expenses-accounting/operation-d
 
 const meta: Meta<typeof OperationDetail> = {
   component: OperationDetail,
-  title: 'Учет доходов-расходов/Полная операция',
+  title: 'Учет доходов-расходов/Операция/Полная',
   tags: ['autodocs'],
 };
 
