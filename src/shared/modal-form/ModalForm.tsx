@@ -22,4 +22,3 @@ export const ModalForm = ({ visible = true, onClose, children }: ModalFormProps)
       </div>
     </div>
   );
-};
