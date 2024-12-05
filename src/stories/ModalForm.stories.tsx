@@ -13,7 +13,7 @@ const SomeContent = () => (
 
 const meta: Meta<typeof ModalForm> = {
   component: ModalForm,
-  title: 'Общее задание/Модальное окно',
+  title: 'Общее задание/Модальное окно/Модальное окно',
   tags: ['autodocs'],
   argTypes: {
     children: {

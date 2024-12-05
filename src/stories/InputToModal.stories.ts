@@ -4,7 +4,7 @@ import { StatefullModalForm } from '../shared/statefull-modal-form/StatefullModa
 
 const meta: Meta<typeof StatefullModalForm> = {
   component: StatefullModalForm,
-  title: 'Общее задание/Состояние модального окна',
+  title: 'Общее задание/Модальное окно/С состоянием',
   tags: ['autodocs'],
   parameters: {
     docs: {

@@ -7,8 +7,12 @@ type ModalFormProps = {
   onClose?: (event: MouseEvent<HTMLButtonElement>) => void;
 };
 
-export const ModalForm = ({ visible = true, onClose, children }: ModalFormProps) =>
-  !!visible && (
+export const ModalForm = ({ visible = true, onClose, children }: ModalFormProps) => {
+  if (!visible) {
+    return null;
+  }
+
+  return (
     <div className={s.modal}>
       <div className={s['modal-content']}>
         <span className={s.close} onClick={onClose}>
