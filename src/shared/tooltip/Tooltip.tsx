@@ -88,7 +88,6 @@ export const Tooltip = ({ children, content, duration = 1000, position = 'bottom
     if (mounted) {
       const targetRect = target.getBoundingClientRect();
       const tooltipRect = tooltip.getBoundingClientRect();
-      console.log(targetRect);
       const calcPosition = positionMap[position];
       setCoords(calcPosition({ targetRect, tooltipRect, offset: 5 }));
     }
