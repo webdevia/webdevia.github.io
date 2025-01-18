@@ -6,7 +6,7 @@ import { Button } from '../shared/button/Button';
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
-  title: 'Сложные компоненты/Подсказка/На кнопке',
+  title: 'Сложные компоненты/Подсказка/С настройками',
   tags: ['autodocs'],
 };
 
@@ -14,7 +14,9 @@ export default meta;
 
 export const Test = {
   args: {
-    children: <Button>{'Наведи на меня'}</Button>,
-    content: 'Плавно всплывающая подсказка',
+    content: 'Подсказка',
+    duration: 1000,
+    position: 'top',
+    children: <Button>Наведи на меня</Button>,
   },
 };
