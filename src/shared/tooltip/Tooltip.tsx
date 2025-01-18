@@ -14,32 +14,35 @@ type CoordProps = {
   offset: number;
 };
 
-type Position = 'top' | 'bottom' | 'left' | 'right';
+export type Position = 'top' | 'bottom' | 'left' | 'right';
 
 type PositionMap = Record<Position, (props: CoordProps) => Coords>;
 
 const getCenterCoord = (primary: number, secondary: number) => (primary - secondary) / 2;
 
-const YLeft = (primary: DOMRect, secondary: DOMRect) => primary.left + getCenterCoord(primary.width, secondary.width);
-const XTop = (primary: DOMRect, secondary: DOMRect) => primary.top + getCenterCoord(primary.height, secondary.height);
+const YLeft = (primary: DOMRect, secondary: DOMRect) =>
+  primary.left + window.scrollX + getCenterCoord(primary.width, secondary.width);
+const XTop = (primary: DOMRect, secondary: DOMRect) =>
+  primary.top + window.scrollY + getCenterCoord(primary.height, secondary.height);
 
 const positionMap: PositionMap = {
   top: ({ targetRect, tooltipRect, offset }) => ({
-    top: targetRect.top - tooltipRect.height - offset,
-    left: YLeft(targetRect, tooltipRect),
+    top: targetRect.top + window.scrollY - tooltipRect.height - offset,
+    left: targetRect.left + window.scrollX + getCenterCoord(targetRect.width, tooltipRect.width),
   }),
+
   bottom: ({ targetRect, tooltipRect, offset }) => ({
-    top: targetRect.bottom + offset,
+    top: targetRect.bottom + window.scrollY + offset,
     left: YLeft(targetRect, tooltipRect),
   }),
   left: ({ targetRect, tooltipRect, offset }) => ({
     top: XTop(targetRect, tooltipRect),
-    left: targetRect.left - (tooltipRect.width + offset),
+    left: targetRect.left + window.scrollX - tooltipRect.width - offset,
   }),
 
   right: ({ targetRect, tooltipRect, offset }) => ({
     top: XTop(targetRect, tooltipRect),
-    left: targetRect.left + (targetRect.width + offset),
+    left: targetRect.left + window.scrollX + targetRect.width + offset,
   }),
 };
 
@@ -59,7 +62,7 @@ export const Tooltip = ({ children, content, duration = 1000, position = 'bottom
   const timerRef = useRef(null);
   const mountTimerRef = useRef(null);
 
-  const mountTimer = 10;
+  const mountTimer = 50;
 
   const clearTimeouts = () => {
     timerRef.current && clearTimeout(timerRef.current);
@@ -83,12 +86,11 @@ export const Tooltip = ({ children, content, duration = 1000, position = 'bottom
 
     if (!target || !tooltip) return;
 
-    tooltip.style.setProperty('--tooltip-animation-ms', `${duration + mountTimer}ms`);
-
     if (mounted) {
+      tooltipRef.current?.style.setProperty('--tooltip-animation-ms', `${duration + mountTimer}ms`);
       const targetRect = target.getBoundingClientRect();
       const tooltipRect = tooltip.getBoundingClientRect();
-      const calcPosition = positionMap[position];
+      const calcPosition = positionMap[position] ?? positionMap['bottom'];
       setCoords(calcPosition({ targetRect, tooltipRect, offset: 5 }));
     }
 
