@@ -1,0 +1,27 @@
+.collapse-container {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.collapse-button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1em;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.collapse-content {
+  padding: 10px;
+  background-color: #f9f9f9;
+  transition: height 0.3s ease;
+}
