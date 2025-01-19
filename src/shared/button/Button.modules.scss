@@ -6,9 +6,15 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
 
-.disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
+  &:hover {
+    &:not([disabled]) {
+      background-color: #0056b3;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
