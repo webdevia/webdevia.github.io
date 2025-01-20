@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+
+  &.error {
+    border-color: red;
+  }
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  padding-top: 0.3rem;
+}
