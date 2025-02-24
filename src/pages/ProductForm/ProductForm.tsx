@@ -24,7 +24,7 @@ export const ProductForm = () => {
 
   return (
     <RegularForm onSubmit={handleSubmit(onSubmit)}>
-       <RegularForm.Title>Товар</RegularForm.Title>
+      <RegularForm.Title>Товар</RegularForm.Title>
       <FormInputField name="name" register={register} type="text" errors={errors.name}>
         Название
       </FormInputField>

@@ -13,7 +13,7 @@ export class Database implements IDatabase {
   save<T>(key: string, value: T): Promise<boolean> {
     return new Promise((resolve) =>
       setTimeout(() => {
-          resolve(!!this.data.set(key, value));
+        resolve(!!this.data.set(key, value));
       }, 500)
     );
   }

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Position } from '../tooltip/utils/tooltipPosition';
-import {Tooltip} from "../tooltip/Tooltip";
+import { Tooltip } from '../tooltip/Tooltip';
 import { Button } from '../button/Button';
 import s from './TooltipButtons.module.scss';
 

@@ -1,7 +1,7 @@
 import { useState, useRef, useLayoutEffect } from 'react';
 import { positionMap, Position } from '../utils/tooltipPosition';
 
-export const useTooltip = (position: Position = 'bottom', duration: number = 1000) => {
+export const useTooltip = (position: Position = 'bottom', duration = 1000) => {
   const [visible, setVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [coords, setCoords] = useState({ top: 0, left: 0 });
