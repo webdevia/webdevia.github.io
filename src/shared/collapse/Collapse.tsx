@@ -9,7 +9,7 @@ type CollapseProps = {
 
 export const Collapse: React.FC<CollapseProps> = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { height, contentRef } = useCollapseHeight(isOpen);
+  const { height, contentRef } = useCollapseHeight();
 
   const toggleCollapse = () => {
     setIsOpen((prev) => !prev);

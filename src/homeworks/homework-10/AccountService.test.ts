@@ -31,18 +31,13 @@ describe('AccountService', () => {
   });
 
   test('should throw table not found error', async () => {
+    let err;
     try {
       await accountService.userDiscount.loadDiscounts();
     } catch (e) {
-      expect(e.message).toBe('Failed to load user_discount discounts');
-    }
-  });
-
-  test('should throw table not found error', async () => {
-    try {
-      await accountService.userDiscount.loadDiscounts();
-    } catch (e) {
-      expect(e.message).toBe('Failed to load user_discount discounts');
+      err = e;
+    } finally {
+      expect(err.message).toBe('Failed to load user_discount discounts');
     }
   });
 
