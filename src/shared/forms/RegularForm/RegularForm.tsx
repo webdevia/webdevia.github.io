@@ -4,14 +4,18 @@ import s from './RegularForm.module.scss';
 type RegularFormProps = {
   onSubmit: FormEventHandler<HTMLFormElement>;
   children: ReactNode;
-  title?: string;
 };
 
-export const RegularForm = ({ onSubmit, title, children }: RegularFormProps) => {
+const RegularForm = ({ onSubmit, children }: RegularFormProps) => {
   return (
     <form className={s.form} onSubmit={onSubmit}>
-      {title && <h2 className={s.title}>{title}</h2>}
       {children}
     </form>
   );
 };
+
+const Title = ({ children }: { children: ReactNode }) => <h2 className={s.title}>{children}</h2>;
+
+RegularForm.Title = Title;
+
+export { RegularForm };

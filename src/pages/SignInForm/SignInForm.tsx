@@ -25,7 +25,8 @@ export const SignInForm = () => {
   };
 
   return (
-    <RegularForm title="Войти" onSubmit={handleSubmit(onSubmit)}>
+    <RegularForm onSubmit={handleSubmit(onSubmit)}>
+      <RegularForm.Title>Войти</RegularForm.Title>
       <FormInputField name="email" register={register} type="email" errors={errors.email}>
         Email
       </FormInputField>
