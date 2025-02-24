@@ -30,7 +30,8 @@ const ChangeProfileForm = () => {
   };
 
   return (
-    <RegularForm title="Изменить профиль" onSubmit={handleSubmit(onSubmit)}>
+    <RegularForm onSubmit={handleSubmit(onSubmit)}>
+      <RegularForm.Title>Изменить профиль</RegularForm.Title>
       <FormInputField name="name" register={register} type="text" errors={errors.name}>
         Псевдоним
       </FormInputField>
@@ -57,7 +58,8 @@ const ChangePasswordForm = () => {
   };
 
   return (
-    <RegularForm title="Изменить пароль" onSubmit={handleSubmit(onSubmit)}>
+    <RegularForm onSubmit={handleSubmit(onSubmit)}>
+      <RegularForm.Title>Изменить пароль</RegularForm.Title>
       <FormInputField name="password" register={register} type="password" errors={errors.password}>
         Пароль
       </FormInputField>

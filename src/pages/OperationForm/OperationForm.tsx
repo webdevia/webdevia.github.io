@@ -34,7 +34,8 @@ export const OperationForm = () => {
   };
 
   return (
-    <RegularForm title="Операция" onSubmit={handleSubmit(onSubmit)}>
+    <RegularForm onSubmit={handleSubmit(onSubmit)}>
+      <RegularForm.Title>Операция</RegularForm.Title>
       <FormSelectField
         name="type"
         options={[costOperationOption, profitOperationOption]}

@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect, ReactNode } from 'react';
+import React, { useState, ReactNode } from 'react';
+import { useCollapseHeight } from './hooks/useCollapseHeight';
 import s from './Collapse.module.scss';
 
 type CollapseProps = {
@@ -6,28 +7,13 @@ type CollapseProps = {
   children: ReactNode;
 };
 
-export const Collapse = ({ title, children }: CollapseProps) => {
+export const Collapse: React.FC<CollapseProps> = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [height, setHeight] = useState(0);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const { height, contentRef } = useCollapseHeight(isOpen);
 
   const toggleCollapse = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
-
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) =>
-      entries.forEach((entry) => setHeight(entry.borderBoxSize[0].blockSize))
-    );
-
-    const currentContentRef = contentRef.current;
-
-    currentContentRef && resizeObserver.observe(currentContentRef);
-
-    return () => {
-      currentContentRef && resizeObserver.unobserve(currentContentRef);
-    };
-  }, []);
 
   return (
     <div className={s['collapse-container']}>
@@ -36,7 +22,7 @@ export const Collapse = ({ title, children }: CollapseProps) => {
       </button>
       <div
         style={{
-          height: `${isOpen ? height : 0}px`,
+          height: isOpen ? `${height}px` : '0px',
           overflow: 'hidden',
           transition: 'height 300ms ease',
         }}

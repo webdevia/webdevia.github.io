@@ -25,7 +25,8 @@ export const SignUpForm = () => {
   };
 
   return (
-    <RegularForm title="Зарегистрироваться" onSubmit={handleSubmit(onSubmit)}>
+    <RegularForm onSubmit={handleSubmit(onSubmit)}>
+      <RegularForm.Title>Зарегистрироваться</RegularForm.Title>
       <FormInputField name="email" register={register} type="email" errors={errors.email}>
         Email
       </FormInputField>
